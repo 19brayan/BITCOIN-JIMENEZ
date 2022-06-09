@@ -3,26 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/8f5c9daf85.js" crossorigin="anonymous"></script>
+    <!-- ANIMATE.STYLE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Mi estilo -->
     <link rel="stylesheet" href="./css/style.css">
-    <title>Clase de Github</title>
+    <title>Grid 2</title>
 </head>
 <body>
-    <main>
-        <section>
-            <h1>Bienvenido a Github</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore minus, saepe odio impedit repellendus ipsa recusandae, deserunt magni sint voluptate, voluptatibus quasi molestiae facilis ex optio qui quam totam voluptatum!</p>
-            <br>
-            <br>
-            <br>
-            <button>VER MÁS</button>
-            <br> <h1>Bienvenido a Github</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore minus, saepe odio impedit repellendus ipsa recusandae, deserunt magni sint voluptate, voluptatibus quasi molestiae facilis ex optio qui quam totam voluptatum!</p>
-            <br>
-            <br>
-            <br>
-            <button>VER MÁS</button>
+    <div class="grilla">
+
+        <nav class="nav">
+            <!-- Logo en escritorio -->
+            <img src="./img/NASA_logo-redondo.png" alt="NASA" class="logoDesktop">
+            <ul>
+                <li>
+                    <a href="#">LINK 1</a>
+                </li>
+                <li><a href="#">LINK 2</a></li>
+                <li><a href="#">LINK 3</a></li>
+                <li><a href="#">LINK 4</a></li>
+                <li><a href="#">LINK 5</a></li>
+            </ul>
+        </nav>
+
+        <header class="header">
+            <h1 class="wow animate__animated animate__flipInY">AL INFINITO, Y MÁS ALLÁ!</h1>
+            <!-- Lorem25 -->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit rem a earum porro repellat vitae provident numquam ex temporibus, illo perspiciatis voluptas, alias quod culpa!</p>
+        </header>
+
+        <section class="primeraSeccion animate__animated animate__jello">
+            <h2 class="">Un título descriptivo</h2>
+            <!-- Lorem35 -->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quod delectus quos libero laboriosam beatae earum veniam repellendus. Expedita maxime labore facilis quae error sequi sed velit natus. Eaque, voluptas.</p>
+            <div>
+                <button>MAS INFORMACION</button>
+                <button>SUSCRIBIRME</button>
+            </div>
         </section>
-    </main>  
+
+        <section class="segundaSeccion">
+            <h3>¿Querés formar parte de nuestro staff?</h3>
+            <div>
+                <!-- Lorem50 -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore hic corporis laboriosam expedita pariatur et voluptatem ex, ipsa quasi fuga blanditiis doloremque illo repellendus id quos ab maiores quas mollitia ratione vel totam architecto distinctio. Maiores odio suscipit nam alias corrupti quasi asperiores. Odit ratione deleniti incidunt illo quasi ut!</p>
+                <img src="./img/staff-nasa.jpg" alt="staff nasa">
+            </div>
+        </section>
+
+        <aside class="aside">
+            <h3>Notas relacionadas</h3>
+            <ul>
+                <li><a href="#">Nota relacionada 1</a></li>
+                <li><a href="#">Nota relacionada 2</a></li>
+                <li><a href="#">Nota relacionada 3</a></li>
+                <li><a href="#">Nota relacionada 4</a></li>
+                <li><a href="#">Nota relacionada 5</a></li>
+            </ul>
+        </aside>
+
+        <form action="#" method="GET" class="form animate__animated animate__rotateIn wow">
+            <h3>¡SUSCRIBITE!</h3>
+            <div>
+                <input type="text" placeholder="Nombre completo">
+                <input type="email" placeholder="Email">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+
+        <footer class="footer">
+            <p>&copy comision 29275</p>
+            <i class="fa-brands fa-whatsapp"></i>
+        </footer>
+
+    </div>
+    <script src="js/wow.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+
 </body>
 </html>

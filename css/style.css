@@ -1,6 +1,312 @@
-section{
-    background-color: yellow;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+* {
+    padding: 0;
+    margin: 0;
+    /* font-size: 62.5% */
+    /*1rem = 10px*/
+}
+
+/*Grilla base*/
+.grilla {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 2.5fr 1fr;
+    grid-template-areas:
+        "nav header header header"
+        "nav primeraSeccion primeraSeccion aside"
+        "nav segundaSeccion segundaSeccion aside"
+        "nav form form aside"
+        "footer footer footer footer";
+    background-color: #303030;
+    color: white;
+}
+
+/*Nav*/
+.nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoDesktop {
+    width: 100px;
+    transform: translate(50px, 150px);
+    transform: rotate(45deg);
+    animation-name: girando;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.logoDesktop:hover{
+    /* transform: translateY(250px); */
+}
+
+.nav ul {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.nav li {
+    list-style: none;
+    padding: 20px;
     text-align: center;
-    width: 550px;
+    animation-name: cambioColor;
+    animation-duration: 5s;
+    animation-iteration-count: 3;
+}
+
+.nav li:hover {
+    background-color: cadetblue;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/*Header*/
+
+.header {
+    grid-area: header;
+    background-color: #c6c6c6;
+    color: black;
+    min-height: 15vh;
+    text-align: center;
+    /* background-image: linear-gradient(to top, #ff0000 0%, green 50%, rgba(255, 255, 0, 0.399) 100%); */
+    /* background-image: linear-gradient(to left, green, yellow); */
+    /* background-image: linear-gradient(45deg, blue, green, yellow, orange, red); */
+    background-image: radial-gradient(circle, #22c1c3 0%, #5e4499 55%, #4f52db 100%);
+}
+
+.header h1 {
+    /*Unidad de medida relativa 1rem = 16px*/
+    margin: 1rem;
+}
+
+.header p {
+    max-width: 850px;
+    margin: 1rem auto;
+}
+
+/*Primera seccion*/
+
+.primeraSeccion {
+    grid-area: primeraSeccion;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.primeraSeccion h2 {
+    font-size: 2rem;
+}
+
+.primeraSeccion p {
+    max-width: 550px;
+    text-align: center;
+    margin: 1rem;
+}
+
+.primeraSeccion button {
+    padding: 0.5rem;
+    margin: 1rem;
+    background-color: #4f52db;
+    transition: all 3s;
+    /* transform: translateY(-30px); */
+    /* transform: skewY(-25deg); */
+}
+.primeraSeccion button:hover{
+    transition:.3s;
+    transform: scale(1.2);
+}
+
+/*Segunda sección*/
+
+.segundaSeccion {
+    grid-area: segundaSeccion;
+    display: flex;
+    flex-direction: column;
+}
+
+.segundaSeccion h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.segundaSeccion div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.segundaSeccion img {
+    max-width: 350px;
+    transform: rotateY(35deg);
+}
+
+.segundaSeccion p {
+    max-width: 350px;
+    text-align: center;
+    animation: cambioAncho 5s infinite;
+}
+
+/*Form*/
+.form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* alto mínimo */
+    min-height: 25vh;
+}
+
+.form h3 {
+    font-size: 2rem;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    align-items: center;
+}
+
+.form input {
+    height: 2.5rem;
+    width: 350px;
+    border-radius: 15px;
+    background-color: #c6c6c6;
+    text-align: center;
+    margin-top: 1rem;
+    border-width: 0px;
+    animation-name: cambioAncho;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.form input:focus{
+    transform: scale(1.05);
+    transition: .8s;
+    outline: none;
+
+}
+
+.form input[type=submit]:hover, .form input[type=email]:hover {
+    background-color: black;
+    color: white;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.footer i{
+    font-size: 4rem;
+    color: #a4c639;
+
+}
+
+.footer i:hover{
+    color: white;
+}
+
+/*ANIMACIONES*/
+@keyframes cambioColor{
+    0%{
+        background-color: red;
+    }
+    25%{
+        background-color: orange;
+    }
+    50%{
+        background-color: yellow;
+    }
+    100%{
+        background-color: green;
+    }
+}
+
+@keyframes cambioAncho{
+    0%{
+        width: 550px;
+        background-color: #303030;
+    }
+    50%{
+        width: 350px;
+        background-color: #220551;
+    }
+    100%{
+        width: 250px;
+        background-color: #171994;
+    }
+}
+
+@keyframes girando{
+    0%{
+        transform: rotate(0deg);
+        transition: .5s;
+    }
+    25%{
+        transform: rotate(90deg);
+        transition: .5s;
+    }
+    50%{
+        transform: rotate(180deg);
+        transition: .5s;
+    }
+    75%{
+        transform: rotate(270deg);
+        transition: .5s;
+    }
+    100%{
+        transform: rotate(360deg);
+        transition: .5s;
+    }
+}
+
+
+
+
+/*RESPONSIVE DESING - MEDIA QUERY - MOBILE LAST*/
+/*MOBILE LAST = MAX-WIDTH*/
+@media (max-width: 768px) {
+    .grilla{
+        grid-template-areas:
+        "nav nav nav nav"
+        "header header header header"
+        "primeraSeccion primeraSeccion primeraSeccion aside"
+        "segundaSeccion segundaSeccion segundaSeccion aside"
+        "form form form aside"
+        "footer footer footer footer";
+    }
+    .nav{
+        flex-direction: row;
+    }
+    .nav ul{
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+    }
+    .segundaSeccion img {
+        width: 200px;
+    }
+}
+
+/*DISPOSITIVO CHICOS // SM */
+
+@media (max-width:375px) {
+    .nav{
+        flex-direction: column;
+    }
+    .nav li {
+        padding: 5px;
+    }
+    .segundaSeccion img{
+        display: none;
+    }
 }
